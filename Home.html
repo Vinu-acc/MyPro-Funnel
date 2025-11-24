@@ -1,0 +1,1221 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width,initial-scale=1" />
+<title>MyProFunnels — Premium Black & Gold (One-Page)</title>
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;500;700;900&family=Playfair+Display:wght@600;700&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --black:#000000;
+    --card:#050505;
+    --gold:#d4af37;
+    --gold-2:#b8860b;
+    --muted:#bfbfbf;
+    --glass: rgba(255,255,255,0.02);
+    --maxw:1200px;
+  }
+  *{box-sizing:border-box}
+  html,body{height:100%;margin:0;background:var(--black);color:#fff;font-family:'Montserrat',system-ui,Arial;-webkit-font-smoothing:antialiased}
+  a{color:inherit;text-decoration:none}
+  .wrap{max-width:var(--maxw);margin:0 auto;padding:28px}
+
+  /* NAV (keep same hero/nav as you liked) */
+  header{position:sticky;top:12px;z-index:60;background:linear-gradient(180deg, rgba(255,255,255,0.02), rgba(255,255,255,0.01));border-radius:12px;padding:10px 14px;margin-bottom:22px;border:1px solid rgba(255,255,255,0.03);backdrop-filter: blur(6px);box-shadow:0 8px 30px rgba(212,175,55,0.06)}
+  .nav{display:flex;align-items:center;gap:14px;max-width:var(--maxw);margin:0 auto}
+  .brand{display:flex;gap:12px;align-items:center}
+  .logo{width:52px;height:52px;border-radius:12px;background:linear-gradient(135deg,var(--gold),var(--gold-2));display:flex;align-items:center;justify-content:center;font-family:'Playfair Display';font-weight:900;color:#060606;font-size:18px;box-shadow:0 10px 30px rgba(212,175,55,0.12)}
+  nav{display:flex;gap:14px;margin-left:18px}
+  nav a{color:var(--muted);font-weight:600;padding:8px 10px;border-radius:8px}
+  .nav-actions{margin-left:auto;display:flex;gap:10px}
+  .btn{background:linear-gradient(90deg,var(--gold),var(--gold-2));color:#000;padding:10px 18px;border-radius:10px;font-weight:800;border:none;cursor:pointer;box-shadow:0 12px 30px rgba(212,175,55,0.12)}
+  .ghost{padding:8px 12px;border-radius:10px;border:1px solid rgba(255,255,255,0.04);color:var(--muted);background:transparent}
+
+  /* HERO (unchanged look) */
+  .hero{display:flex;gap:36px;align-items:center;justify-content:space-between;padding:40px 0}
+  .hero-left{flex:1;min-width:360px}
+  .eyebrow{display:inline-flex;align-items:center;gap:10px;padding:8px 12px;border-radius:999px;background:linear-gradient(90deg, rgba(212,175,55,0.08), rgba(212,175,55,0.04));color:var(--gold);font-weight:700;font-size:13px}
+  h1{font-family:'Playfair Display';font-size:44px;line-height:1.05;margin:18px 0;color:transparent;background:linear-gradient(90deg,var(--gold),#f7e6a8);-webkit-background-clip:text;background-clip:text}
+  .lead{color:var(--muted);max-width:680px;margin-bottom:18px;font-size:16px}
+  .cta-row{display:flex;gap:12px;align-items:center;flex-wrap:wrap}
+  .mini-stats{display:flex;gap:12px;margin-top:18px}
+  .stat{background:var(--card);padding:10px 14px;border-radius:10px;border:1px solid rgba(255,255,255,0.03);box-shadow:0 10px 30px rgba(212,175,55,0.06);text-align:center;min-width:110px}
+  .stat h4{margin:0;color:var(--gold);font-size:20px}
+  .stat p{margin:6px 0 0;color:var(--muted);font-size:12px}
+  .hero-right{width:500px;flex-shrink:0;display:flex;align-items:center;justify-content:center}
+  .device{width:460px;border-radius:16px;padding:18px;background:linear-gradient(180deg, rgba(255,255,255,0.02), rgba(255,255,255,0.01));border:1px solid rgba(255,255,255,0.03);box-shadow:0 20px 60px rgba(255,255,255,0.1)}
+
+  /* Redesigned area: keep premium spacing, gold borders visible for containers */
+  .section-title{display:flex;align-items:center;gap:12px;margin-top:30px}
+  .section-title h2{font-size:28px;margin:0}
+  .section-sub{color:var(--muted);font-size:14px;margin-top:8px}
+
+  /* Features Carousel (single row slider) */
+  .carousel{position:relative;margin-top:20px}
+  .carousel-track{display:flex;gap:18px;overflow:hidden;padding-bottom:6px}
+  .slide{min-width:320px;background:linear-gradient(180deg,var(--card),#070707);padding:20px;border-radius:12px;border:1px solid rgba(212,175,55,0.18);box-shadow:0 20px 40px rgba(212,175,55,0.06);flex-shrink:0}
+  .slide .icon{width:64px;height:64px;border-radius:12px;background:linear-gradient(135deg, rgba(212,175,55,0.12), rgba(212,175,55,0.06));display:flex;align-items:center;justify-content:center;color:var(--gold);font-weight:800;font-size:22px;margin-bottom:12px}
+  .carousel-nav{display:flex;gap:10px;align-items:center;margin-top:12px}
+  .dot{width:10px;height:10px;border-radius:999px;background:rgba(255,255,255,0.06)}
+  .dot.active{background:var(--gold)}
+  .arrow{background:rgba(255,255,255,0.03);border-radius:8px;padding:8px;cursor:pointer}
+
+  /* marquee style stats (horizontal scroller) */
+  .marquee{display:flex;gap:18px;align-items:center;margin-top:22px;padding:10px;border-radius:12px;border:1px solid rgba(212,175,55,0.12);background:linear-gradient(90deg, rgba(212,175,55,0.02), rgba(255,255,255,0.01));overflow:hidden}
+  .marquee-track{display:flex;gap:28px;align-items:center;white-space:nowrap;animation:marq 18s linear infinite}
+  @keyframes marq{0%{transform:translateX(0)}100%{transform:translateX(-50%)}}
+  .marq-item{display:inline-flex;align-items:center;gap:12px;padding:6px 10px;border-radius:8px;border:1px solid rgba(255,255,255,0.02);min-width:160px}
+  .marq-item h4{margin:0;color:var(--gold)}
+  .marq-item p{margin:0;color:var(--muted);font-size:13px}
+
+  /* Unlimited Tiles (grid) with visible gold border / shadow */
+  .unlimited-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:16px;margin-top:22px}
+  .tile{background:linear-gradient(180deg,var(--card),#070707);padding:18px;border-radius:12px;border:1px solid rgba(212,175,55,0.18);box-shadow:0 20px 50px rgba(212,175,55,0.07);display:flex;gap:12px;align-items:flex-start}
+  .tile .tag{width:58px;height:58px;border-radius:10px;background:linear-gradient(135deg, rgba(212,175,55,0.16), rgba(212,175,55,0.06));display:flex;align-items:center;justify-content:center;color:var(--gold);font-weight:800}
+  .tile h4{margin:0}
+  .tile p{margin:6px 0 0;color:var(--muted);font-size:13px}
+
+  /* Testimonials slider */
+  .testimonials{margin-top:28px}
+  .test-track{display:flex;gap:18px;overflow:hidden}
+  .test-card{min-width:320px;background:linear-gradient(180deg,var(--card),#070707);padding:18px;border-radius:12px;border:1px solid rgba(255,255,255,0.03);box-shadow:0 20px 40px rgba(212,175,55,0.06);flex-shrink:0}
+  .test-meta{display:flex;gap:12px;align-items:center}
+  .avatar-sm{width:54px;height:54px;border-radius:10px;background:linear-gradient(135deg,var(--gold),var(--gold-2));display:flex;align-items:center;justify-content:center;color:#000;font-weight:800}
+  .stars{color:var(--gold);margin-top:8px}
+
+  /* FAQ accordion */
+  .faq{margin-top:28px;display:grid;grid-template-columns:1fr 1fr;gap:12px}
+  .qa{background:linear-gradient(180deg,var(--card),#070707);padding:14px;border-radius:12px;border:1px solid rgba(255,255,255,0.03)}
+  .question{display:flex;align-items:center;justify-content:space-between;cursor:pointer}
+  .answer{margin-top:8px;color:var(--muted);font-size:14px;display:none}
+
+  /* CTA footer strip */
+  .big-cta{margin-top:28px;padding:22px;border-radius:12px;background:linear-gradient(90deg, rgba(212,175,55,0.06), rgba(212,175,55,0.03));border:1px solid rgba(212,175,55,0.08);display:flex;align-items:center;justify-content:space-between}
+
+  footer{margin-top:38px;padding:30px;text-align:center;color:var(--muted);font-size:13px;border-top:1px solid rgba(255,255,255,0.03)}
+
+  /* responsive tweaks */
+  @media(max-width:980px){
+    .hero{flex-direction:column-reverse}
+    .carousel-track{padding-bottom:10px}
+    .faq{grid-template-columns:1fr}
+  }
+  @media(max-width:600px){
+    h1{font-size:28px}
+    .slide{min-width:260px}
+    .test-card{min-width:260px}
+  }
+
+  /* subtle entrance */
+  .fade{opacity:0;transform:translateY(14px);animation:fadeIn .7s forwards}
+  .delay-1{animation-delay:.08s}
+  .delay-2{animation-delay:.16s}
+  .delay-3{animation-delay:.24s}
+  @keyframes fadeIn{to{opacity:1;transform:none}}
+</style>
+</head>
+<body>
+  <div class="wrap">
+    <!-- NAV (unchanged) -->
+    <header aria-label="Main navigation">
+      <div class="nav">
+        <div class="brand">
+          <div class="logo">MF</div>
+          <div style="line-height:1">
+            <div style="font-weight:800">MyProFunnels <span style="color:var(--gold)">Premium</span></div>
+            <div style="font-size:12px;color:var(--muted)">AI Funnels • Chatbot • IVR • LMS</div>
+          </div>
+        </div>
+
+        <nav aria-label="Site links">
+          <a href="#why">Why</a>
+          <a href="#unlimited">Unlimited</a>
+          <a href="#process">Process</a>
+          <a href="#testimonials">Testimonials</a>
+          <a href="#faq">FAQ</a>
+        </nav>
+
+        <div class="nav-actions">
+          <button class="ghost" onclick="scrollToForm()">Want Proofs?</button>
+          <button class="btn" onclick="scrollToForm()">Book Call — ₹1999 Value</button>
+        </div>
+      </div>
+    </header>
+
+    <!-- HERO (keep identical) -->
+    <div class="hero" role="main">
+      <div class="hero-left fade delay-1">
+        <div class="eyebrow">Attention Coaches, Consultants & Business Owners</div>
+        <h1>Is Your Funnel <span style="color:var(--gold)">Holding You Back?</span></h1>
+        <div class="lead">Stop wasting money on funnels that don't convert. Upgrade to an all-in-one AI marketing & automation system with chatbot, IVR, LMS and done-for-you funnels that perform 24/7.</div>
+
+        <div class="cta-row">
+          <button class="btn" onclick="scrollToForm()">Book A Free One-On-One Call — ₹1999 Value</button>
+          <a class="ghost" href="#proofs" onclick="scrollTo('proofs')">Want To See Real Proofs?</a>
+        </div>
+
+        <div class="mini-stats">
+          <div class="stat"><h4>3+</h4><p>Years of Services</p></div>
+          <div class="stat"><h4>150+</h4><p>Clients Served</p></div>
+          <div class="stat"><h4>200+</h4><p>Funnels Built</p></div>
+        </div>
+     </div>
+
+      <div class="hero-right fade delay-2">
+   <div class="device floaty" 
+       role="img" 
+       aria-label="Product mockup"
+       style="filter: drop-shadow(0 0 12px rgba(255,255,255,0.4));">
+
+    <svg viewBox="0 0 800 520" width="100%" 
+         xmlns="http://www.w3.org/2000/svg" 
+         preserveAspectRatio="xMidYMid slice" 
+         style="display:block;border-radius:14px">
+
+      <defs>
+        <linearGradient id="g" x1="0" x2="1">
+          <stop offset="0" stop-color="#060606"/>
+          <stop offset="1" stop-color="#080808"/>
+        </linearGradient>
+      </defs>
+
+      <rect width="100%" height="100%" rx="14" fill="url(#g)"/>
+
+      <g transform="translate(36,40)">
+        <rect x="0" y="0" width="720" height="440" rx="14" 
+              fill="#060606" 
+              stroke="rgba(255,255,255,0.03)"/>
+
+        <!-- TITLE — Larger now -->
+        <text x="28" y="46" fill="#d4af37" 
+              font-family="Montserrat" 
+              font-size="28" 
+              font-weight="800">
+          MyProFunnels — Live Launch
+        </text>
+
+        <!-- Top Card -->
+        <rect x="28" y="66" width="380" height="180" rx="12" 
+              fill="#070707" 
+              stroke="rgba(255,255,255,0.03)"/>
+
+        <text x="44" y="115" fill="#ffffff" 
+              font-family="Playfair Display" 
+              font-size="24">
+          Done For You Funnel
+        </text>
+
+        <text x="44" y="142" fill="#cfcfcf" 
+              font-size="16">
+          Chatbot • IVR • LMS • Automations
+        </text>
+
+        <!-- Graph Section -->
+        <g transform="translate(44,260)">
+          <rect x="0" y="0" width="350" height="140" rx="10" 
+                fill="#050505" 
+                stroke="rgba(212,175,55,0.08)"/>
+
+          <polyline points="12,110 90,64 168,92 240,46 320,80" 
+                    fill="none" 
+                    stroke="#d4af37" 
+                    stroke-width="3.5" 
+                    stroke-linecap="round" 
+                    stroke-linejoin="round"/>
+        </g>
+
+        <!-- Button Box -->
+        <rect x="420" y="76" width="280" height="56" rx="10" 
+              fill="rgba(212,175,55,0.10)"/>
+
+        <text x="438" y="110" 
+              fill="#d4af37" 
+              font-size="18" 
+              font-weight="700">
+          Book Free Call — ₹1999 Value
+        </text>
+      </g>
+
+    </svg>
+  </div>
+</div>
+
+</div>
+
+    <!-- Redesigned Features Carousel (replaces the earlier simple grid) -->
+ <!-- Centered Automatic Feature Slider (1 card visible, manual dots added) -->
+  
+  <div style="max-width:700px;margin:28px auto 0;text-align:center">
+  <h2 style="margin:0 0 8px;font-size:28px;font-weight:700;color:#ffffff">Why Choose Our AI-Powered Funnels?</h2>
+  <div style="color:#d0d0d0;margin-bottom:18px;font-size:14px">High-converting funnels that work 24/7 — built to convert, not just look pretty.</div>
+
+  <!-- slider wrapper -->
+  <div id="autoSliderWrap" 
+       style="position:relative;overflow:hidden;border-radius:16px;
+              padding:18px;background:linear-gradient(180deg, rgba(255,255,255,0.02),
+              rgba(255,255,255,0.01));border:1px solid rgba(212,175,55,0.06);
+              box-shadow:0 8px 32px rgba(212,175,55,0.25);">
+    
+    <!-- track -->
+    <div id="autoSliderTrack" 
+         style="display:flex;transition:transform 0.7s cubic-bezier(.22,.9,.24,1);width:100%;">
+
+    <!-- slide 1 -->
+     <!-- slide 1 - AI Chatbot & IVR -->
+<div class="auto-slide" style="flex:0 0 100%;margin:0 20px;padding:26px;border-radius:12px;
+display:flex;flex-direction:column;align-items:center;box-shadow:0 0 25px rgba(255,255,255,0.45);">
+  <div style="width:84px;height:84px;border-radius:14px;display:flex;align-items:center;justify-content:center;margin-bottom:14px;background:linear-gradient(135deg, rgba(212,175,55,0.08), rgba(212,175,55,0.04));">
+    <svg width="38" height="38" viewBox="0 0 24 24" fill="none" stroke="#d4af37" stroke-width="1.5">
+      <path d="M21 6a2 2 0 0 0-2-2H5a2 2 0 0 0-2 2v12l4-4h12a2 2 0 0 0 2-2V6z"/>
+      <path d="M8 10h8"/>
+      <path d="M8 14h4"/>
+    </svg>
+  </div>
+  <h3 style="margin:0 0 8px;font-size:20px;color:#fff">AI Chatbot & IVR</h3>
+  <p style="margin:0;color:#cfcfcf;font-size:14px">Qualify leads instantly, schedule calls, reduce no-shows with automation.</p>
+</div>
+
+<!-- slide 2 - Conversion Focused -->
+<div class="auto-slide" style="flex:0 0 100%;margin:0 20px;padding:26px;border-radius:12px;
+display:flex;flex-direction:column;align-items:center;box-shadow:0 0 25px rgba(255,255,255,0.45);">
+  <div style="width:84px;height:84px;border-radius:14px;display:flex;align-items:center;justify-content:center;margin-bottom:14px;background:linear-gradient(135deg, rgba(212,175,55,0.08), rgba(212,175,55,0.04));">
+    <svg width="38" height="38" viewBox="0 0 24 24" fill="none" stroke="#d4af37" stroke-width="1.5">
+      <path d="M3 17l6-6 4 4 8-8"/>
+    </svg>
+  </div>
+  <h3 style="margin:0 0 8px;font-size:20px;color:#fff">Conversion Focused</h3>
+  <p style="margin:0;color:#cfcfcf;font-size:14px">Tested frameworks designed purely for maximum conversions.</p>
+</div>
+
+<!-- slide 3 - Done-For-You Setup -->
+<div class="auto-slide" style="flex:0 0 100%;margin:0 20px;padding:26px;border-radius:12px;
+display:flex;flex-direction:column;align-items:center;box-shadow:0 0 25px rgba(255,255,255,0.45);">
+  <div style="width:84px;height:84px;border-radius:14px;display:flex;align-items:center;justify-content:center;margin-bottom:14px;background:linear-gradient(135deg, rgba(212,175,55,0.08), rgba(212,175,55,0.04));">
+    <svg width="38" height="38" viewBox="0 0 24 24" fill="none" stroke="#d4af37" stroke-width="1.5">
+      <path d="M12 8v4l3 3"/>
+      <circle cx="12" cy="12" r="10"/>
+    </svg>
+  </div>
+  <h3 style="margin:0 0 8px;font-size:20px;color:#fff">Done-For-You Setup</h3>
+  <p style="margin:0;color:#cfcfcf;font-size:14px">We build everything while you focus on delivering value.</p>
+</div>
+
+<!-- slide 4 - Performance Tracking -->
+<div class="auto-slide" style="flex:0 0 100%;margin:0 20px;padding:26px;border-radius:12px;
+display:flex;flex-direction:column;align-items:center;box-shadow:0 0 25px rgba(255,255,255,0.45);">
+  <div style="width:84px;height:84px;border-radius:14px;display:flex;align-items:center;justify-content:center;margin-bottom:14px;background:linear-gradient(135deg, rgba(212,175,55,0.08), rgba(212,175,55,0.04));">
+    <svg width="38" height="38" viewBox="0 0 24 24" fill="none" stroke="#d4af37" stroke-width="1.5">
+      <rect x="3" y="3" width="18" height="18" rx="2"/>
+      <path d="M7 12h10"/>
+      <path d="M12 7v10"/>
+    </svg>
+  </div>
+  <h3 style="margin:0 0 8px;font-size:20px;color:#fff">Performance Tracking</h3>
+  <p style="margin:0;color:#cfcfcf;font-size:14px">A/B testing, dashboards, weekly optimization.</p>
+</div>
+
+<!-- slide 5 - Unlimited Support -->
+<div class="auto-slide" style="flex:0 0 100%;margin:0 20px;padding:26px;border-radius:12px;
+display:flex;flex-direction:column;align-items:center;box-shadow:0 0 25px rgba(255,255,255,0.45);">
+  <div style="width:84px;height:84px;border-radius:14px;display:flex;align-items:center;justify-content:center;margin-bottom:14px;background:linear-gradient(135deg, rgba(212,175,55,0.08), rgba(212,175,55,0.04));">
+    <svg width="38" height="38" viewBox="0 0 24 24" fill="none" stroke="#d4af37" stroke-width="1.5">
+      <circle cx="12" cy="12" r="9"/>
+      <path d="M12 8v4l2 2"/>
+    </svg>
+  </div>
+  <h3 style="margin:0 0 8px;font-size:20px;color:#fff">Unlimited Support</h3>
+  <p style="margin:0;color:#cfcfcf;font-size:14px">We handle tech, you handle business.</p>
+</div>
+
+
+
+    <!-- dots -->
+    <div id="autoDots" style="margin-top:18px;display:flex;justify-content:center;gap:10px;"></div>
+  </div>
+</div>
+
+<script>
+(function(){
+  const track = document.getElementById('autoSliderTrack');
+  const slides = track.querySelectorAll('.auto-slide');
+  const total = slides.length;
+  const dotsContainer = document.getElementById('autoDots');
+  let idx = 0, timer=null;
+
+  // dots
+  for(let i=0; i<total; i++){
+    const dot = document.createElement('div');
+    dot.style.cssText="width:12px;height:12px;border-radius:50%;background:#555;cursor:pointer;transition:.3s;";
+    if(i===0) dot.style.background="#d4af37";
+    dot.addEventListener('click',()=>goTo(i));
+    dotsContainer.appendChild(dot);
+  }
+  const dots = dotsContainer.querySelectorAll("div");
+
+  const updateDots = () => {
+    dots.forEach((d,i)=> d.style.background = i===idx ? "#d4af37" : "#555");
+  };
+
+const advance = () => {
+    idx = (idx + 1) % total;
+    track.style.transform = `translateX(calc(-${idx*100}% - ${idx*40}px - 20px))`; // <- added -5px
+    updateDots();
+};
+
+const goTo = (i) => {
+    idx = i;
+    track.style.transform = `translateX(calc(-${idx*100}% - ${idx*40}px - 20px))`; // <- added -5px
+    updateDots();
+    resetAuto();
+};
+
+
+  const resetAuto = () => {
+    clearInterval(timer);
+    timer = setInterval(advance, 3000);
+  };
+
+  timer = setInterval(advance, 3000);
+})();
+</script>
+
+
+
+    <!-- Marquee stats (auto-scroll) -->
+    <div class="marquee fade delay-2" aria-hidden="false">
+      <div class="marquee-track" id="marqTrack">
+        <div class="marq-item"><h4>3+</h4><p>Years of Services</p></div>
+        <div class="marq-item"><h4>150+</h4><p>Happy Clients</p></div>
+        <div class="marq-item"><h4>200+</h4><p>Funnels Built</p></div>
+        <div class="marq-item"><h4>7+</h4><p>Team Members</p></div>
+        <div class="marq-item"><h4>24/7</h4><p>Funnel Monitoring</p></div>
+        <!-- duplicate for smooth loop -->
+        <div class="marq-item"><h4>3+</h4><p>Years of Services</p></div>
+        <div class="marq-item"><h4>150+</h4><p>Happy Clients</p></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Unlimited Tiles redesigned with visible gold border - Full Width -->
+<!-- Unlimited Section -->
+<div id="unlimited" class="section-title" style="width:100%; position:relative; text-align:center; margin-top:28px;">
+  <h2>Unlimited — What You Get</h2>
+</div>
+<div class="section-sub" style="width:100%; position:relative; text-align:center; margin-bottom:32px;">Everything you need to scale — included in our premium plan.</div>
+
+<div class="unlimited-grid" style="
+  display:grid;
+  grid-template-columns:repeat(3,1fr);
+  gap:20px;
+  width:100%;
+  max-width:1200px;
+  margin:0 auto;
+  box-sizing:border-box;
+">
+
+  <!-- Tile 1: Landing Pages -->
+  <div class="tile" style="background:rgba(255,255,255,0.03);border:0.7px solid #d4af37;border-radius:12px;padding:20px;display:flex;gap:14px;align-items:flex-start;">
+    <div>
+      <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="#d4af37" stroke-width="0.7x">
+        <rect x="3" y="4" width="18" height="16" rx="2"/>
+        <path d="M3 10h18"/>
+      </svg>
+    </div>
+    <div>
+      <h4 style="margin:0 0 6px;color:#fff;font-size:18px;">Unlimited Landing Pages</h4>
+      <p style="margin:0;color:#cfcfcf;font-size:14px;">We build unlimited landing pages for every occasion.</p>
+    </div>
+  </div>
+
+  <!-- Tile 2: Websites -->
+  <div class="tile" style="background:rgba(255,255,255,0.03);border:0.7px solid #d4af37;border-radius:12px;padding:20px;display:flex;gap:14px;align-items:flex-start;">
+    <div>
+      <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="#d4af37" stroke-width="0.7x">
+        <path d="M3 4h18v16H3z"/>
+        <path d="M3 10h18"/>
+      </svg>
+    </div>
+    <div>
+      <h4 style="margin:0 0 6px;color:#fff;font-size:18px;">Unlimited Websites</h4>
+      <p style="margin:0;color:#cfcfcf;font-size:14px;">Perfect for agencies developing & selling websites.</p>
+    </div>
+  </div>
+
+  <!-- Tile 3: Emails -->
+  <div class="tile" style="background:rgba(255,255,255,0.03);border:0.7px solid #d4af37;border-radius:12px;padding:20px;display:flex;gap:14px;align-items:flex-start;">
+    <div>
+      <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="#d4af37" stroke-width="0.7x">
+        <path d="M4 6h16v12H4z"/>
+        <path d="M4 6l8 6 8-6"/>
+      </svg>
+    </div>
+    <div>
+      <h4 style="margin:0 0 6px;color:#fff;font-size:18px;">Unlimited Emails</h4>
+      <p style="margin:0;color:#cfcfcf;font-size:14px;">Unlimited email marketing from Day 1.</p>
+    </div>
+  </div>
+
+  <!-- Tile 4: WhatsApp Messages -->
+  <div class="tile" style="background:rgba(255,255,255,0.03);border:0.7px solid #d4af37;border-radius:12px;padding:20px;display:flex;gap:14px;align-items:flex-start;">
+    <div>
+      <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="#d4af37" stroke-width="0.7x">
+        <path d="M21 2a10 10 0 0 0-18 8c0 1.8.5 3.5 1.5 5l-2 6 6-2c1.5 1 3.2 1.5 5 1.5a10 10 0 0 0 6-17z"/>
+        <path d="M16 12a4 4 0 0 1-6 0 4 4 0 0 1 0-6"/>
+      </svg>
+    </div>
+    <div>
+      <h4 style="margin:0 0 6px;color:#fff;font-size:18px;">Unlimited WhatsApp Messages</h4>
+      <p style="margin:0;color:#cfcfcf;font-size:14px;">Max attention, max conversions — unlimited WhatsApp.</p>
+    </div>
+  </div>
+
+  <!-- Tile 5: Automations -->
+  <div class="tile" style="background:rgba(255,255,255,0.03);border:0.7px solid #d4af37;border-radius:12px;padding:20px;display:flex;gap:14px;align-items:flex-start;">
+    <div>
+      <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="#d4af37" stroke-width="0.7x">
+        <path d="M3 12h18M12 3v18"/>
+      </svg>
+    </div>
+    <div>
+      <h4 style="margin:0 0 6px;color:#fff;font-size:18px;">Unlimited Automations</h4>
+      <p style="margin:0;color:#cfcfcf;font-size:14px;">Create automated workflows for everything you do.</p>
+    </div>
+  </div>
+
+  <!-- Tile 6: Calendar Setup -->
+  <div class="tile" style="background:rgba(255,255,255,0.03);border:0.7px solid #d4af37;border-radius:12px;padding:20px;display:flex;gap:14px;align-items:flex-start;">
+    <div>
+      <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="#d4af37" stroke-width="0.7x">
+        <rect x="3" y="3" width="18" height="18" rx="2"/>
+        <path d="M3 8h18"/>
+      </svg>
+    </div>
+    <div>
+      <h4 style="margin:0 0 6px;color:#fff;font-size:18px;">Unlimited Calendar Setup</h4>
+      <p style="margin:0;color:#cfcfcf;font-size:14px;">For coaches conducting multiple 1-on-1 calls.</p>
+    </div>
+  </div>
+
+  <!-- Tile 7: Contact Forms -->
+  <div class="tile" style="background:rgba(255,255,255,0.03);border:0.7px solid #d4af37;border-radius:12px;padding:20px;display:flex;gap:14px;align-items:flex-start;">
+    <div>
+      <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="#d4af37" stroke-width="0.7x">
+        <path d="M4 4h16v16H4z"/>
+        <path d="M4 9h16"/>
+      </svg>
+    </div>
+    <div>
+      <h4 style="margin:0 0 6px;color:#fff;font-size:18px;">Unlimited Contact Forms</h4>
+      <p style="margin:0;color:#cfcfcf;font-size:14px;">Custom forms with payment systems included.</p>
+    </div>
+  </div>
+
+  <!-- Tile 8: Contacts Storage -->
+  <div class="tile" style="background:rgba(255,255,255,0.03);border:0.7px solid #d4af37;border-radius:12px;padding:20px;display:flex;gap:14px;align-items:flex-start;">
+    <div>
+      <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="#d4af37" stroke-width="0.7x">
+        <path d="M4 4h16v16H4z"/>
+        <path d="M8 4v16"/>
+      </svg>
+    </div>
+    <div>
+      <h4 style="margin:0 0 6px;color:#fff;font-size:18px;">Unlimited Contacts Storage</h4>
+      <p style="margin:0;color:#cfcfcf;font-size:14px;">Store unlimited leads in a structured system.</p>
+    </div>
+  </div>
+
+  <!-- Tile 9: Surveys -->
+  <div class="tile" style="background:rgba(255,255,255,0.03);border:0.7px solid #d4af37;border-radius:12px;padding:20px;display:flex;gap:14px;align-items:flex-start;">
+    <div>
+      <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="#d4af37" stroke-width="0.7x">
+        <circle cx="12" cy="12" r="9"/>
+        <path d="M6 12h12"/>
+        <path d="M12 6v12"/>
+      </svg>
+    </div>
+    <div>
+      <h4 style="margin:0 0 6px;color:#fff;font-size:18px;">Unlimited Surveys</h4>
+      <p style="margin:0;color:#cfcfcf;font-size:14px;">Run unlimited surveys for trend & audience study.</p>
+    </div>
+  </div>
+
+  <!-- Tile 10: LMS -->
+  <div class="tile" style="background:rgba(255,255,255,0.03);border:0.7px solid #d4af37;border-radius:12px;padding:20px;display:flex;gap:14px;align-items:flex-start;">
+    <div>
+      <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="#d4af37" stroke-width="0.7x">
+        <path d="M12 2l7 4-7 4-7-4 7-4z"/>
+        <path d="M5 10v10l7 4 7-4V10"/>
+      </svg>
+    </div>
+    <div>
+      <h4 style="margin:0 0 6px;color:#fff;font-size:18px;">Unlimited LMS</h4>
+      <p style="margin:0;color:#cfcfcf;font-size:14px;">Full secure LMS for online training & courses.</p>
+    </div>
+  </div>
+
+  <!-- Tile 11: Hosting Space -->
+  <div class="tile" style="background:rgba(255,255,255,0.03);border:0.7px solid #d4af37;border-radius:12px;padding:20px;display:flex;gap:14px;align-items:flex-start;">
+    <div>
+      <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="#d4af37" stroke-width="0.7x">
+        <path d="M3 4h18v16H3z"/>
+        <path d="M3 10h18"/>
+        <path d="M12 4v16"/>
+      </svg>
+    </div>
+    <div>
+      <h4 style="margin:0 0 6px;color:#fff;font-size:18px;">Unlimited Hosting Space</h4>
+      <p style="margin:0;color:#cfcfcf;font-size:14px;">Host unlimited content — only domain needed.</p>
+    </div>
+  </div>
+
+  <!-- Tile 12: Payments -->
+  <div class="tile" style="background:rgba(255,255,255,0.03);border:0.7px solid #d4af37;border-radius:12px;padding:20px;display:flex;gap:14px;align-items:flex-start;">
+    <div>
+      <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="#d4af37" stroke-width="0.7x">
+        <path d="M4 7h16v10H4z"/>
+        <path d="M4 12h16"/>
+        <path d="M10 7v10"/>
+      </svg>
+    </div>
+    <div>
+      <h4 style="margin:0 0 6px;color:#fff;font-size:18px;">Unlimited Payments</h4>
+      <p style="margin:0;color:#cfcfcf;font-size:14px;">Stripe activation in 10 minutes. Only 2% fees.</p>
+    </div>
+  </div>
+
+</div>
+
+<style>
+  @media(max-width:1024px){
+    .unlimited-grid { grid-template-columns:repeat(2,1fr); }
+  }
+  @media(max-width:700px){
+    .unlimited-grid { grid-template-columns:1fr; }
+  }
+</style>
+<div class="wrap">
+  <h2 class="section-title">What Our Clients Say</h2>
+
+  <div class="testimonial-wrapper">
+    <button class="nav prev">&lt;</button>
+
+    <div class="testimonial-slider">
+      <div class="testimonial-track">
+
+        <!-- Testimonial 1 -->
+        <div class="testimonial-card">
+          <div class="testimonial-image">
+            <div class="avatar">AM</div>
+          </div>
+          <div class="testimonial-text">
+            <div class="stars">★★★★★</div>
+            <p>"My revenue doubled in 90 days. The DFY funnel + chatbot handled leads while I taught. Professional team."</p>
+            <strong>Ashwin M.</strong>
+            <span>Coach — Wellness</span>
+          </div>
+        </div>
+
+        <!-- Testimonial 2 -->
+        <div class="testimonial-card">
+          <div class="testimonial-image">
+            <div class="avatar">SS</div>
+          </div>
+          <div class="testimonial-text">
+            <div class="stars">★★★★★</div>
+            <p>"Smooth onboarding, fast launch. Their IVR reduced no-shows and calendar bookings improved 3x."</p>
+            <strong>Sana S.</strong>
+            <span>Consultant — HR</span>
+          </div>
+        </div>
+
+        <!-- Testimonial 3 -->
+        <div class="testimonial-card">
+          <div class="testimonial-image">
+            <div class="avatar">RK</div>
+          </div>
+          <div class="testimonial-text">
+            <div class="stars">★★★★★</div>
+            <p>"Reseller-friendly and stable. Unlimited pages & hosting saved us thousands."</p>
+            <strong>Rohit K.</strong>
+            <span>Agency Owner</span>
+          </div>
+        </div>
+
+        <!-- Testimonial 4 -->
+        <div class="testimonial-card">
+          <div class="testimonial-image">
+            <div class="avatar">LP</div>
+          </div>
+          <div class="testimonial-text">
+            <div class="stars">★★★★★</div>
+            <p>"The team handled my campaigns end-to-end. I could focus on coaching while they managed leads."</p>
+            <strong>Lakshmi P.</strong>
+            <span>Business Coach</span>
+          </div>
+        </div>
+
+        <!-- Testimonial 5 -->
+        <div class="testimonial-card">
+          <div class="testimonial-image">
+            <div class="avatar">TM</div>
+          </div>
+          <div class="testimonial-text">
+            <div class="stars">★★★★★</div>
+            <p>"Amazing results with minimal effort. The DFY funnels are a game-changer for small agencies."</p>
+            <strong>Tanvi M.</strong>
+            <span>Digital Marketer</span>
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+    <button class="nav next">&gt;</button>
+  </div>
+</div>
+
+<style>
+  body { background:#111; font-family:sans-serif; }
+  .section-title {
+    text-align:center;
+    font-size:28px;
+    margin-top:28px;
+    margin-bottom:24px;
+    color:#fff;
+  }
+
+  /* Wrapper to hold slider and arrows */
+  .testimonial-wrapper {
+    position:relative;
+    width:90%;
+    max-width:800px;
+    margin:0 auto;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+  }
+
+  .testimonial-slider {
+    overflow:hidden;
+    width:100%;
+  }
+
+  .testimonial-track {
+    display:flex;
+    transition:transform 0.5s ease;
+  }
+
+  .testimonial-card {
+    display:flex;
+    min-width:100%;
+    align-items:center;
+    position:relative;
+  }
+
+  .testimonial-image {
+    flex:1;
+    height:350px;
+    background:linear-gradient(135deg,#d4af37, rgba(212,175,55,0.5));
+    border-radius:16px;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    position:relative;
+  }
+
+  .testimonial-image .avatar {
+    width:80px;
+    height:80px;
+    border-radius:50%;
+    border:2px solid #d4af37;
+    background:#000;
+    color:#ffd700;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    font-weight:bold;
+    font-size:24px;
+  }
+
+  .testimonial-text {
+    flex:1.5;
+    background:#000000;
+    color:#fff;
+    border:2px solid #d4af37;
+    border-radius:16px;
+    padding:20px;
+    margin-left:-60px;
+    box-shadow:0 8px 20px rgba(0,0,0,0.3);
+    display:flex;
+    flex-direction:column;
+    justify-content:center;
+  }
+
+  .testimonial-text .stars { color:#ffd700; margin-bottom:8px; font-size:16px; }
+  .testimonial-text p { margin:0 0 12px; color:#cfcfcf; font-size:15px; line-height:1.5; }
+  .testimonial-text strong { font-size:16px; margin-bottom:2px; }
+  .testimonial-text span { font-size:14px; color:#d0d0d0; }
+
+  /* Navigation Buttons */
+  .testimonial-wrapper .nav {
+    background:rgba(212,175,55,0.9);
+    border:none;
+    color:#000;
+    font-size:24px;
+    width:40px;
+    height:40px;
+    border-radius:50%;
+    cursor:pointer;
+    z-index:5;
+    margin:0 20px; /* space between arrows and slider */
+  }
+
+  .testimonial-wrapper .prev { order:0; }
+  .testimonial-wrapper .next { order:2; }
+
+  /* Responsive */
+  @media(max-width:700px){
+    .testimonial-card { flex-direction:column; }
+    .testimonial-text { margin-left:0; margin-top:-40px; }
+    .testimonial-image { height:250px; }
+  }
+</style>
+
+<script>
+  const track = document.querySelector('.testimonial-track');
+  const prev = document.querySelector('.prev');
+  const next = document.querySelector('.next');
+  let index = 0;
+
+  prev.addEventListener('click', () => {
+    if(index > 0) index--;
+    track.style.transform = `translateX(${-index * 100}%)`;
+  });
+
+  next.addEventListener('click', () => {
+    if(index < track.children.length - 1) index++;
+    track.style.transform = `translateX(${-index * 100}%)`;
+  });
+</script>
+
+<!--my stepss-->
+<section class="timeline-section">
+
+    <div class="timeline-heading">
+        <h2>Our <span>Creative</span> Process</h2>
+        <p>Our 6-Step Creative Journey to Apply For Done For You Funnel</p>
+    </div>
+
+    <div class="timeline">
+
+        <!-- STEP 1 -->
+        <div class="timeline-item left">
+            <div class="timeline-content">
+                <h3>1. Apply</h3>
+                <p>Submit your application form by paying ₹49. Refunded if not qualified.</p>
+            </div>
+      
+        </div>
+
+        <!-- STEP 2 -->
+        <div class="timeline-item right">
+            <div class="timeline-content">
+                <h3>2. Review</h3>
+                <p>We check niche fit, product clarity, and growth potential within 48 hours.</p>
+            </div>
+    
+        </div>
+
+        <!-- STEP 3 -->
+        <div class="timeline-item left">
+            <div class="timeline-content">
+                <h3>3. Qualification Call</h3>
+                <p>We understand your offer, audience, and landing page needs.</p>
+            </div>
+      
+        </div>
+
+        <!-- STEP 4 -->
+        <div class="timeline-item right">
+            <div class="timeline-content">
+                <h3>4. Investment</h3>
+                <p>Once approved, you are invited for one-time investment enrollment.</p>
+            </div>
+        
+        </div>
+
+        <!-- STEP 5 -->
+        <div class="timeline-item left">
+            <div class="timeline-content">
+                <h3>5. Launch</h3>
+                <p>Your high-converting landing page is built & delivered within 7 days.</p>
+            </div>
+         
+        </div>
+
+        <!-- STEP 6 -->
+        <div class="timeline-item right">
+            <div class="timeline-content">
+                <h3>6. Delivery & Support</h3>
+                <p>Your Funnel is launched & supported for smooth performance.</p>
+            </div>
+        
+        </div>
+
+    </div>
+
+</section>
+
+<style>
+/* SECTION BACKGROUND */
+.timeline-section {
+    width: 100%;
+    padding: 80px 0;
+    background: #111; /* dark black like other sections */
+    color: #fff;
+    font-family: "Poppins", sans-serif;
+}
+
+/* HEADING */
+.timeline-heading {
+    text-align: center;
+    margin-bottom: 50px;
+}
+
+.timeline-heading h2 {
+    font-size: 48px;
+    color: #fff;
+    font-weight: 700;
+}
+
+.timeline-heading h2 span {
+    color: #d4af37; /* gold accent */
+}
+
+.timeline-heading p {
+    font-size: 18px;
+    color: #d4af37; /* gold accent */
+}
+
+/* TIMELINE WRAPPER */
+.timeline {
+    position: relative;
+    width: 80%;
+    margin: auto;
+    padding-left: 20px;
+}
+
+/* VERTICAL LINE */
+.timeline::before {
+    content: "";
+    position: absolute;
+    left: 50%;
+    top: 0;
+    width: 4px;
+    height: 100%;
+    background: linear-gradient(#d4af37, #ffd700);
+    transform: translateX(-50%);
+    border-radius: 10px;
+}
+
+/* EACH ITEM */
+.timeline-item {
+    width: 50%;
+    padding: 25px 0;
+    position: relative;
+}
+
+/* LEFT ITEMS */
+.timeline-item.left {
+    text-align: right;
+    padding-right: 60px;
+}
+
+/* RIGHT ITEMS */
+.timeline-item.right {
+    margin-left: 50%;
+    padding-left: 60px;
+}
+
+/* CONTENT BOX */
+.timeline-content {
+    background: #111; /* black box like testimonials */
+    padding: 25px;
+    border-radius: 12px;
+    border: 2px solid #d4af37; /* thin gold border */
+    box-shadow: 0 0 25px rgba(212, 175, 55, 0.4);
+}
+
+.timeline-content h3 {
+    margin: 0 0 10px;
+    color: #d4af37;
+    font-size: 22px;
+    font-weight: 700;
+}
+
+/* CIRCLE CHECKPOINT */
+.circle {
+    position: absolute;
+    top: 40px;
+    width: 26px;
+    height: 26px;
+    background: #111; /* black */
+    border: 2px solid #d4af37; /* thin gold border */
+    border-radius: 50%;
+    left: 50%;
+    transform: translateX(-50%);
+    box-shadow: 0 0 12px rgba(212, 175, 55, 0.6);
+}
+
+/* RESPONSIVE */
+@media(max-width: 768px) {
+    .timeline::before { left: 20px; }
+    .timeline-item {
+        width: 100%;
+        padding-left: 50px;
+        padding-right: 0;
+        margin-left: 0;
+        text-align: left !important;
+    }
+    .circle {
+        left: 20px;
+        transform: translateX(0);
+    }
+}
+</style>
+
+<!--ends here-->
+
+    <!-- FAQ -->
+    <section id="faq" class="faq-section">
+  <div class="section-title">
+    <h2>Have Questions?</h2>
+  </div>
+
+  <div class="faq-container">
+
+    <div class="qa">
+      <div class="question"><strong>What services are included in the "All-in-One Digital Marketing & Automation Tool"?</strong> <span class="toggle">+</span></div>
+      <div class="answer">
+        Our All-in-One Digital Marketing & Automation Tool includes a comprehensive suite of services, such as:
+        <ul>
+          <li>Unlimited landing pages, websites, emails, WhatsApp messages, automations, contact forms, hosting space</li>
+          <li>AI-powered chatbots and IVR systems</li>
+          <li>Unlimited LMS (Learning Management System) for online training</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="qa">
+      <div class="question"><strong>What is the cost of the services?</strong> <span class="toggle">+</span></div>
+      <div class="answer">
+        Total value: ₹89,500 per month. Offered for only ₹12,000 + GST (One-Time) with no hidden costs. Includes FREE Bonuses up to ₹1,00,000.
+      </div>
+    </div>
+
+    <!-- Add the rest of your FAQ items similarly -->
+
+  </div>
+</section>
+
+<style>
+.faq-section {
+    background: #111;
+    color: #fff;
+    padding: 60px 20px;
+    font-family: "Poppins", sans-serif;
+}
+
+.faq-section .section-title h2 {
+    text-align: center;
+    font-size: 32px;
+    margin-bottom: 40px;
+    color: #fff;
+}
+
+.faq-container {
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.qa {
+    background: #111;
+    border: 2px solid #d4af37;
+    border-radius: 12px;
+    margin-bottom: 15px;
+    padding: 20px;
+    box-shadow: 0 0 20px rgba(212,175,55,0.4);
+}
+
+.qa .question {
+    display: flex;
+    justify-content: space-between;
+    cursor: pointer;
+    font-weight: 600;
+    font-size: 16px;
+}
+
+.qa .question .toggle {
+    font-size: 20px;
+    color: #d4af37;
+}
+
+.qa .answer {
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.5s ease;
+    font-size: 15px;
+    color: #cfcfcf;
+    margin-top: 10px;
+}
+
+.qa ul {
+    margin: 8px 0 0 20px;
+    padding: 0;
+}
+
+.qa ul li {
+    margin-bottom: 5px;
+}
+</style>
+
+<script>
+const qas = document.querySelectorAll('.qa');
+qas.forEach(qa => {
+  const question = qa.querySelector('.question');
+  const answer = qa.querySelector('.answer');
+
+  question.addEventListener('click', () => {
+    const isActive = qa.classList.contains('active');
+    // Close all other FAQs
+    qas.forEach(item => {
+      item.classList.remove('active');
+      item.querySelector('.answer').style.maxHeight = null;
+      item.querySelector('.toggle').textContent = '+';
+    });
+    if(!isActive){
+      qa.classList.add('active');
+      answer.style.maxHeight = answer.scrollHeight + "px";
+      question.querySelector('.toggle').textContent = '-';
+    }
+  });
+});
+</script>
+
+    <!-- CTA Banner (keeps strong visual) -->
+    <div class="big-cta fade delay-3">
+      <div style="display:flex;gap:12px;align-items:center">
+        <div class="badge" style="background:linear-gradient(90deg, rgba(212,175,55,0.12), rgba(212,175,55,0.06));padding:10px 14px;border-radius:999px;color:var(--gold);font-weight:800">Book Your Free Call</div>
+        <div>
+          <div style="font-weight:800">Launch Your Course — Done For You</div>
+          <div style="color:var(--muted);font-size:13px;margin-top:6px">Live webinar / one-on-one: we'll launch your course during the session.</div>
+        </div>
+      </div>
+      <div style="display:flex;gap:10px;align-items:center">
+        <button class="ghost" onclick="scrollTo('faq')">See FAQs</button>
+        <button class="btn" onclick="scrollToForm()">Book Call — ₹1999 Value</button>
+      </div>
+    </div>
+
+    <!-- Lead form (kept compact) -->
+    <div style="display:flex;gap:16px;flex-wrap:wrap;margin-top:22px;align-items:flex-start">
+      <div style="flex:1;min-width:320px" class="card fade delay-1">
+        <strong style="color:var(--gold)">Book Your Free Call — ₹1999 Value</strong>
+        <div style="margin-top:10px;display:flex;gap:8px;flex-wrap:wrap">
+          <input id="name" placeholder="Full name" style="flex:1;padding:12px;border-radius:10px;border:1px solid rgba(255,255,255,0.04);background:#070707;color:#fff"/>
+          <input id="phone" placeholder="Phone / WhatsApp" style="flex:1;padding:12px;border-radius:10px;border:1px solid rgba(255,255,255,0.04);background:#070707;color:#fff"/>
+        </div>
+        <div style="margin-top:10px;display:flex;gap:8px;justify-content:flex-end">
+          <button class="ghost" onclick="clearForm()">Cancel</button>
+          <button class="btn" onclick="submitLead()">Book My Call</button>
+        </div>
+      </div>
+
+      <div style="flex:1;min-width:280px" class="card fade delay-2">
+        <strong style="color:var(--gold)">Want Real Proofs?</strong>
+        <p style="color:var(--muted);margin-top:8px">We share case studies and live proof during the call. Click to request case studies and launch examples.</p>
+        <div style="margin-top:12px;display:flex;gap:8px">
+          <button class="ghost" onclick="alert('Proofs will be shared on call')">Request Proofs</button>
+          <button class="btn" onclick="scrollToForm()">Book Call</button>
+        </div>
+      </div>
+    </div>
+
+    <footer>
+      <div style="max-width:900px;margin:0 auto">
+        <div style="font-weight:800">MyProFunnels Ventures Pvt Ltd</div>
+        <div style="color:var(--muted);margin-top:6px">Please note: results are not guaranteed. Terms, Privacy & Refunds on site. © 2024 MyProFunnels Dot Com.</div>
+      </div>
+    </footer>
+  </div>
+
+<script>
+  // Carousel logic
+  (function(){
+    const track = document.getElementById('carouselTrack');
+    const slides = [...track.children];
+    const next = document.getElementById('next');
+    const prev = document.getElementById('prev');
+    const dotsWrap = document.getElementById('dots');
+    let index = 0;
+
+    function update(){
+      const slideWidth = slides[0].getBoundingClientRect().width + 18; // include gap
+      track.style.transform = 'translateX(' + (-index * slideWidth) + 'px)';
+      [...dotsWrap.children].forEach(d=>d.classList.remove('active'));
+      if(dotsWrap.children[index]) dotsWrap.children[index].classList.add('active');
+    }
+
+    // create dots
+    slides.forEach((s,i)=>{
+      const d = document.createElement('div'); d.className='dot' + (i===0? ' active':''); d.onclick=()=>{index=i;update();}; dotsWrap.appendChild(d);
+    });
+
+    next.addEventListener('click',()=>{ index = (index+1) % slides.length; update(); });
+    prev.addEventListener('click',()=>{ index = (index-1 + slides.length) % slides.length; update(); });
+
+    // auto advance
+    let auto = setInterval(()=>{ index = (index+1) % slides.length; update(); },5000);
+    [next,prev].forEach(el=>el.addEventListener('mouseenter',()=>clearInterval(auto)));
+    track.addEventListener('mouseenter',()=>clearInterval(auto));
+    track.addEventListener('mouseleave',()=>{ auto = setInterval(()=>{ index = (index+1) % slides.length; update(); },5000); });
+
+    window.addEventListener('resize', update);
+    update();
+  })();
+
+  // Testimonials simple auto-scroll (loop)
+  (function(){
+    const t = document.getElementById('testTrack');
+    let pos = 0; 
+    function step(){
+      pos += 1; if(pos > t.scrollWidth/3) pos = 0; t.scrollTo({left:pos, behavior:'smooth'});
+    }
+    let ti = setInterval(step,2200);
+    t.addEventListener('mouseenter', ()=> clearInterval(ti));
+    t.addEventListener('mouseleave', ()=> ti = setInterval(step,2200));
+  })();
+
+  // FAQ toggle
+  document.querySelectorAll('.qa').forEach(q => {
+    q.querySelector('.question').addEventListener('click', ()=>{
+      const ans = q.querySelector('.answer');
+      const toggle = q.querySelector('.toggle');
+      const open = ans.style.display === 'block';
+      document.querySelectorAll('.answer').forEach(a=>a.style.display='none');
+      document.querySelectorAll('.toggle').forEach(t=>t.textContent='+');
+      if(!open){ ans.style.display='block'; toggle.textContent='-'; }
+    });
+  });
+
+  // form helpers
+  function scrollTo(id){ const el = document.getElementById(id); if(!el) return; el.scrollIntoView({behavior:'smooth',block:'center'}); }
+  function scrollToForm(){ const f = document.getElementById('leadForm'); if(f){ f.scrollIntoView({behavior:'smooth',block:'center'}); const input = f.querySelector('input'); if(input) input.focus(); } }
+  function submitLead(){ const name = document.getElementById('name').value || 'Guest'; const phone = document.getElementById('phone').value || ''; if(!phone){ alert('Please add phone/WhatsApp to book a call.'); return; } alert('Thanks '+name+'. We will contact you on '+phone+'.'); document.getElementById('name').value=''; document.getElementById('phone').value=''; }
+  function clearForm(){ document.getElementById('name').value=''; document.getElementById('phone').value=''; }
+
+  // entrance animations
+  document.addEventListener('DOMContentLoaded', ()=>{ document.querySelectorAll('.fade').forEach((el,i)=>{ el.style.animationDelay = (i*90)+'ms'; el.classList.add('visible'); }); });
+</script>
+</body>
+</html>
